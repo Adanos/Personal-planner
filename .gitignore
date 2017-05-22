@@ -87,6 +87,10 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+# Libraries
+*.dll
+*.lib
+
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -286,3 +290,4 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
