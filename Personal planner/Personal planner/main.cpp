@@ -18,7 +18,7 @@ void printEvents(std::shared_ptr<sql::ResultSet>& resultSet)
 int main(void)
 {
 	Connector connector;
-	std::unique_ptr<Event> event(Event::createEvent("test zdarzenia 2", "2017-01-09 12:00"));
+	std::unique_ptr<Event> event(Event::createEvent("test zdarzenia 3", "2017-01-09 2:00"));
 	sql::Connection& connection = connector.getConnection();
 	StatementDatabase statementDatabase(connection);
 	std::shared_ptr<sql::ResultSet> resultSet(&statementDatabase.getAllRecords());

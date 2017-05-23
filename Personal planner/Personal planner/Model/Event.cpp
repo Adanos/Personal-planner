@@ -1,6 +1,6 @@
 #include "Event.hpp"
 
-const std::string Event::regExDate = "\\d{4}-\\d{2}-\\d{2}";
+const std::string Event::regExDate = "\\d{4}-\\d{2}-\\d{2} \\d{1,2}:\\d{2}";
 
 Event::Event()
 {
@@ -48,7 +48,7 @@ Event* Event::createEvent(std::string p_eventName, std::string p_date)
 	if (boost::regex_search(p_date, l_match, l_regExDate))
 	{
 		std::string strDate = l_match.str();
-		l_event = new Event(p_eventName, p_date);
+		l_event = new Event(p_eventName, strDate);
 	}
 
 	return l_event;
