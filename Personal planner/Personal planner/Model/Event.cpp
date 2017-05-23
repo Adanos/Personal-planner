@@ -41,7 +41,7 @@ Event::~Event()
 
 Event* Event::createEvent(std::string p_eventName, std::string p_date)
 {
-	Event *l_event;
+	Event *l_event = nullptr;
 	boost::regex l_regExDate(Event::regExDate);
 	boost::smatch l_match;
 
@@ -49,8 +49,7 @@ Event* Event::createEvent(std::string p_eventName, std::string p_date)
 	{
 		std::string strDate = l_match.str();
 		l_event = new Event(p_eventName, p_date);
-		return l_event;
 	}
 
-	return nullptr;
+	return l_event;
 }

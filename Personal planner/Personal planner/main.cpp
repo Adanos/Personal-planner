@@ -7,7 +7,9 @@ int main(void)
 {
 	Connector connector;
 	std::unique_ptr<Event> event(Event::createEvent("test", "2012-09-09"));
-	std::cout << event->getDate() << std::endl;
+	if (event)
+		std::cout << event->getDate() << std::endl;
+	else std::cout << "empty event" << std::endl;
 	//sql::Connection& conn = connector.getConnection();
 
 	return 0;
