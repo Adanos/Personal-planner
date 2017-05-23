@@ -21,9 +21,15 @@
     <ClCompile Include="Controller\Connector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Model\Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller\Connector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model\Event.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
