@@ -65,7 +65,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -128,10 +130,12 @@
     <ClCompile Include="Controller\Connector.cpp" />
     <ClCompile Include="Model\Event.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Controller\StatementDatabase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller\Connector.hpp" />
     <ClInclude Include="Model\Event.hpp" />
+    <ClInclude Include="Controller\StatementDatabase.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
