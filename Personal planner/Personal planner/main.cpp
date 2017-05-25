@@ -3,15 +3,30 @@
 #include <Controller\Connector.hpp>
 #include <Model\Event.hpp>
 #include <Controller\StatementDatabase.hpp>
+#include <cppconn\resultset_metadata.h>
 
 void printEvents(std::shared_ptr<sql::ResultSet>& resultSet)
 {
+	sql::ResultSetMetaData *rsmd = resultSet->getMetaData();
+	std::string name = rsmd->getColumnName(1);
+	std::vector<std::string> columnNames;
+
+	std::cout << "MySQL replies: " << std::endl;;
+	for (int i = 1; i <= rsmd->getColumnCount(); ++i)
+	{
+		std::string name = rsmd->getColumnName(i);
+		std::cout << name << ";";
+		columnNames.push_back(name);
+	}
+
+	std::cout << std::endl;
+
 	while (resultSet->next())
 	{
-		std::cout << "MySQL replies: ";
-		std::cout << resultSet->getString("EventName") << std::endl;
-		std::cout << resultSet->getString("Time") << std::endl;
-		std::cout << resultSet->getString("IdEvents") << std::endl;
+		for (auto columnName : columnNames)
+			std::cout << resultSet->getString(columnName) << ";";
+			
+		std::cout << std::endl;
 	}
 }
 

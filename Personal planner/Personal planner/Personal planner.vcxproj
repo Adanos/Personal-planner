@@ -131,11 +131,14 @@
     <ClCompile Include="Model\Event.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Controller\StatementDatabase.cpp" />
+    <ClCompile Include="View\UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller\Connector.hpp" />
     <ClInclude Include="Model\Event.hpp" />
     <ClInclude Include="Controller\StatementDatabase.hpp" />
+    <ClInclude Include="View\UserInterface.hpp" />
+    <ClInclude Include="View\UserOptionEnum.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
