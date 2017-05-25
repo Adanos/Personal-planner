@@ -10,35 +10,6 @@ Event::Event(std::string p_eventName, std::string p_date) : eventName(p_eventNam
 {
 }
 
-Event::Event(const Event& p_other)
-{
-	Event temp(p_other);
-	swap(*this, temp);
-}
-
-Event& Event::operator=(const Event& p_other)
-{
-	Event temp(p_other);
-	swap(*this, temp);
-
-	return *this;
-}
-
-Event::Event(Event&& p_other) :Event()
-{
-	swap(*this, p_other);
-}
-
-Event& Event::operator=(Event&& p_other)
-{
-	swap(*this, p_other);
-	return *this;
-}
-
-Event::~Event()
-{
-}
-
 Event* Event::createEvent(std::string p_eventName, std::string p_date)
 {
 	Event *l_event = nullptr;

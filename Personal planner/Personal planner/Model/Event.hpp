@@ -13,11 +13,18 @@ private:
 	Event(std::string p_eventName, std::string p_date);
 
 public:
-	Event(const Event& p_other);
-	Event& operator=(const Event& p_other);
-	Event(Event&& p_other);
-	Event& operator=(Event&& p_other);
-	~Event();
+	Event(const Event& p_other) = default;
+	Event& operator=(const Event& p_other) = default;
+	~Event() = default;
+
+	std::string getEventName()
+	{
+		return eventName;
+	}
+	std::string getDate()
+	{
+		return date;
+	}
 
 	friend void swap(Event& p_first, Event& p_second)
 	{
@@ -27,13 +34,5 @@ public:
 	}
 
 	static Event* createEvent(std::string p_eventName, std::string p_date);
-	std::string getEventName()
-	{
-		return eventName;
-	}
-	std::string getDate()
-	{
-		return date;
-	}
 };
 
