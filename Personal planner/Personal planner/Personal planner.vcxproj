@@ -127,16 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controller\ApplicationController.cpp" />
     <ClCompile Include="Controller\Connector.cpp" />
     <ClCompile Include="Model\Event.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Controller\StatementDatabase.cpp" />
+    <ClCompile Include="View\Messages.cpp" />
     <ClCompile Include="View\UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controller\ApplicationController.hpp" />
     <ClInclude Include="Controller\Connector.hpp" />
     <ClInclude Include="Model\Event.hpp" />
     <ClInclude Include="Controller\StatementDatabase.hpp" />
+    <ClInclude Include="View\Messages.hpp" />
     <ClInclude Include="View\UserInterface.hpp" />
     <ClInclude Include="View\UserOptionEnum.hpp" />
   </ItemGroup>

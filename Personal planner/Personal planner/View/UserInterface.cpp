@@ -8,7 +8,7 @@ UserInterface::~UserInterface()
 {
 }
 
-void UserInterface::printInfoMessage(std::string& p_message)
+void UserInterface::printInfoMessage(const std::string& p_message)
 {
 	std::cout << p_message << std::endl;
 }
@@ -22,7 +22,7 @@ void UserInterface::printResults(sql::ResultSet& p_resultSet)
 	
 	l_columnCount = l_resultSetMetaData->getColumnCount();
 
-	std::cout << "MySQL replies: " << "\n";
+	std::cout << Messages::MYSQL_REPLY << "\n";
 	for (int i = 1; i <= l_columnCount; ++i)
 	{
 		l_name = l_resultSetMetaData->getColumnName(i);
@@ -52,11 +52,11 @@ UserOptionEnum UserInterface::getInputFromUser()
 
 	while (std::cin.fail() || !l_option || l_option > L_MAX_USER_CHOICES)
 	{
-		std::cout << "Error. Enter correct input 1 or 2." << std::endl;
+		std::cout << Messages::ENTER_CORRECT_USER_OPTION << std::endl;
 		std::cin.clear();
 		std::cin.ignore(256, '\n');
 		std::cin >> l_option;
 	}
 
-	return static_cast<UserOptionEnum>(l_option);
+	return static_cast<UserOptionEnum>(--l_option);
 }
