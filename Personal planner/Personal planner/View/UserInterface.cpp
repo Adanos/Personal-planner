@@ -45,7 +45,7 @@ void UserInterface::printResults(sql::ResultSet& p_resultSet)
 
 UserOptionEnum UserInterface::getInputFromUser()
 {
-	const unsigned short L_MAX_USER_CHOICES = 2;
+	const unsigned short L_MAX_USER_CHOICES = 3;
 	unsigned short l_option;
 	
 	std::cin >> l_option;

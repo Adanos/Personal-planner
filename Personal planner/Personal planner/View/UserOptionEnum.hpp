@@ -1,5 +1,6 @@
 enum class UserOptionEnum : int
 {
 	SELECT,
-	INSERT
+	INSERT,
+	FINISH_PROGRAM
 };
